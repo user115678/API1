@@ -6,6 +6,12 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+app.post('/api/embed', (req, res) => {
+  // Simuler un embedding
+  const embedding = Array(1536).fill(0).map(() => Math.random() - 0.5);
+  res.json({ embedding });
+});
+
 app.post('/api/qdrant/:collection/search', (req, res) => {
   res.json({
     result: [
