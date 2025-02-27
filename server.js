@@ -12,15 +12,15 @@ app.post('/api/embed', (req, res) => {
   res.json({ embedding });
 });
 
-app.post('/api/qdrant', (req, res) => {
+app.post('/api/qdrant/:collection/search', (req, res) => {
   res.json({
     result: [
       {
         score: 0.9,
         payload: {
-          titre_principal: "Arrêt Cour de Cassation - 27 Avril 2023",
-          titre_secondaire: "Déductibilité des frais professionnels",
-          resume: "La Cour a statué que les frais professionnels doivent présenter un lien direct avec l'activité professionnelle pour être déductibles."
+          titre_principal: "Arrêt exemple",
+          titre_secondaire: "Cas juridique",
+          resume: "Résumé de l'arrêt pertinent pour la recherche."
         }
       }
     ]
